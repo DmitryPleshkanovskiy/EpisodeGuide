@@ -15,7 +15,7 @@
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
-    "prepare": "husky install && playwright install"
+    "prepare": "husky install && playwright install --with-deps"
   },
   "dependencies": {
     "vue": "^3.4.15",
