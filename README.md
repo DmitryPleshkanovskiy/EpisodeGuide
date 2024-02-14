@@ -6,14 +6,14 @@ It has many key qualities:
 - Approachable - Builds on top of standard HTML, CSS and JavaScript with intuitive API and world-class documentation. 
 - Performant - Truly reactive, compiler-optimized rendering system that rarely requires manual optimization. 
 - Versatile - A rich, incrementally adoptable ecosystem that scales between a library and a full-featured framework. 
-- Community First - Not backed by huge corporations, moves in direction to satisfy the community
+- Community First - Not backed by huge corporations, moves in the direction to satisfy the community
 - Enterprise proven - Used by many big names in various industries
 
-Initial project setup was generated using `create-vue` script, as a officially recommended way to start a new vue application.
-It based on `vite` build tool, which provide good development experience and outstanding performance.
+The initial project setup was generated using the `create-vue` script, as an officially recommended way to start a new Vue application.
+It is based on `vite` build tool, which provides good development experience and outstanding performance.
 
 Additionally, the project setup includes:
-- commitizen - to keep the commits format consistent
+- commitizen - to keep the format of the commit consistent
 - git hooks setup with `husky`:
      - pre-push hook - to run linter and tests before every push to the repository
      - prepare-commit-msg - to force consistent commit messages format
@@ -21,9 +21,13 @@ Additionally, the project setup includes:
 
 Demo app available at [episode-guide.dpserver.org](https://episode-guide.dpserver.org)
 
-The application is hosted in an AWS S3 bucket and distributed via Cloudfront CDN.
+The application is hosted in an AWS S3 bucket and distributed via CloudFront CDN.
 
-## Recommended IDE Setup
+## Recommended Local Setup
+
+Project setup tested with `NodeJS` latest LTS versions v18 and v20.
+
+Recommended but not required code editor setup:
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
