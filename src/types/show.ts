@@ -4,7 +4,7 @@ export type Show = {
   image: {
     medium: string
     original: string
-  }
+  } | null
   rating: {
     average: number
   } | null

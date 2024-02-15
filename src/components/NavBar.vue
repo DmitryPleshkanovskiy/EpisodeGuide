@@ -9,7 +9,12 @@ const route = useRoute()
   <nav
     class="w-full flex justify-center items-center p-2 shadow-md fixed bg-black z-10 scroll-m-1 bg-red"
   >
-    <RouterLink v-if="route.path.includes('show')" class="absolute text-white left-5" to="/">
+    <RouterLink
+      v-if="route.path.includes('show')"
+      class="absolute text-white left-5"
+      to="/"
+      data-test="back-to-main-link"
+    >
       <IconAngleLeft />
     </RouterLink>
     <RouterLink to="/">
