@@ -3,9 +3,10 @@
 Vue 3 was used to implement the assignment, as stated in the task description regarding the preferred framework.
 
 It has many key qualities:
-- Approachable - Builds on top of standard HTML, CSS and JavaScript with intuitive API and world-class documentation. 
-- Performant - Truly reactive, compiler-optimized rendering system that rarely requires manual optimization. 
-- Versatile - A rich, incrementally adoptable ecosystem that scales between a library and a full-featured framework. 
+
+- Approachable - Builds on top of standard HTML, CSS and JavaScript with intuitive API and world-class documentation.
+- Performant - Truly reactive, compiler-optimized rendering system that rarely requires manual optimization.
+- Versatile - A rich, incrementally adoptable ecosystem that scales between a library and a full-featured framework.
 - Community First - Not backed by huge corporations, moves in the direction to satisfy the community
 - Enterprise proven - Used by many big names in various industries
 
@@ -13,10 +14,11 @@ The initial project setup was generated using the `create-vue` script, as an off
 It is based on `vite` build tool, which provides good development experience and outstanding performance.
 
 Additionally, the project setup includes:
+
 - commitizen - to keep the format of the commit consistent
 - git hooks setup with `husky`:
-     - pre-push hook - to run linter and tests before every push to the repository
-     - prepare-commit-msg - to force consistent commit messages format
+  - pre-push hook - to run linter and tests before every push to the repository
+  - prepare-commit-msg - to force consistent commit messages format
 - github actions - to run deployment pipeline on every main branch update
 
 Demo app available at [episode-guide.dpserver.org](https://episode-guide.dpserver.org)
@@ -24,6 +26,8 @@ Demo app available at [episode-guide.dpserver.org](https://episode-guide.dpserve
 The application is hosted in an AWS S3 bucket and distributed via CloudFront CDN.
 
 ## Recommended Local Setup
+
+Before starting, create `.env` file in the root of the project with `VITE_APP_API_URL` variable with a value set to `https://api.tvmaze.com`. Check the `.env.example` for the list of required environment variables.
 
 Project setup tested with `NodeJS` latest LTS versions v18 and v20.
 
@@ -38,8 +42,8 @@ TypeScript cannot handle type information for `.vue` imports by default, so we r
 If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
 
 1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
+   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
+   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
 2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
 
 ## Customize configuration
