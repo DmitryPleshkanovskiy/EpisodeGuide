@@ -10,6 +10,7 @@ import TvShowSearchResults from '@/components/TvShowSearchResults.vue'
 
 import type { Show } from '../types/show'
 import type { SearchResult } from '@/types/searchResult'
+import ErrorMessage from '@/components/ErrorMessage.vue'
 
 const query = ref('')
 const searchUrl = computed(() => `/search/shows?q=${query.value}`)
@@ -45,16 +46,7 @@ const handleSearchClear = () => {
 
 <template>
   <main>
-    <!-- TODO: Replace with alert components -->
-    <div v-if="showsError">
-      <p>There was an error:</p>
-      <pre>{{ showsError }}</pre>
-    </div>
-
-    <div v-if="searchError">
-      <p>There was an error:</p>
-      <pre>{{ searchError }}</pre>
-    </div>
+    <ErrorMessage class="m-5" :errors="[showsError, searchError]" />
     <TvShowSearch class="mt-5" @on-search="handleSearch" @on-clear="handleSearchClear" />
     <TvShowSearchResults v-if="showSearchResults" :search-results="searchResults || []" />
     <div v-show="showGroups">
