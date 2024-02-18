@@ -1,3 +1,4 @@
+import type { FetchError } from '@/types/fetchError'
 import { ref, toValue, watchEffect, type MaybeRefOrGetter, type ComputedRef } from 'vue'
 
 export function useFetch<T>(
@@ -8,7 +9,7 @@ export function useFetch<T>(
 
   const data = ref<T>()
   const isLoading = ref<boolean>(false)
-  const error = ref<any>(null)
+  const error = ref<FetchError | null>(null)
 
   const fetchData = () => {
     data.value = undefined
@@ -28,7 +29,7 @@ export function useFetch<T>(
         isLoading.value = false
       })
       .catch((err) => {
-        error.value = err
+        error.value = { title: toValue(url), message: err }
         isLoading.value = false
       })
   }

@@ -8,9 +8,16 @@ const { searchResults } = defineProps<{
 </script>
 
 <template>
-  <div class="flex flex-wrap gap-3 p-5 justify-center">
+  <section
+    v-if="searchResults.length"
+    class="flex flex-wrap gap-3 p-5 justify-center"
+    aria-label="Search results"
+  >
     <div v-for="result in searchResults" :key="result.show.id">
       <TvShowPreview :show="result.show" />
     </div>
-  </div>
+  </section>
+  <section v-else class="p-5 flex items-center justify-center" aria-label="No tv shows found">
+    No tv shows found
+  </section>
 </template>
