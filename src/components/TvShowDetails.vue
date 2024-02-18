@@ -9,7 +9,7 @@ const tvShowGenres = tvshow.genres.join(', ')
 </script>
 
 <template>
-  <article class="p-5">
+  <article class="p-5" data-testid="show-details">
     <div class="flex gap-5 flex-col sm:flex-row">
       <div class="w-full sm:w-[250px] object-contain">
         <div v-if="tvshow.image" class="flex justify-center">

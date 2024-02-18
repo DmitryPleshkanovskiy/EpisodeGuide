@@ -14,6 +14,7 @@ const { data: tvshow, isLoading, error } = useFetch<Show>(`/shows/${route.params
 <template>
   <ErrorMessage class="m-5" :errors="[error]" />
   <TvShowDetails v-if="tvshow && !isLoading" :tvshow="tvshow" />
+  <!-- TODO: Replace with a loading sceleton: -->
   <div v-else-if="isLoading">
     <p>TV show is loading...</p>
   </div>

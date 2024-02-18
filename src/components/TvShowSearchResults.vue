@@ -12,6 +12,7 @@ const { searchResults } = defineProps<{
     v-if="searchResults.length"
     class="flex flex-wrap gap-3 p-5 justify-center"
     aria-label="Search results"
+    data-testid="search-results"
   >
     <div v-for="result in searchResults" :key="result.show.id">
       <TvShowPreview :show="result.show" />
