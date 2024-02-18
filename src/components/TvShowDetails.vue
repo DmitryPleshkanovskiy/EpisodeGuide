@@ -4,6 +4,8 @@ import type { Show } from '../types/show'
 const { tvshow } = defineProps<{
   tvshow: Show
 }>()
+
+const tvShowGenres = tvshow.genres.join(', ')
 </script>
 
 <template>
@@ -14,7 +16,7 @@ const { tvshow } = defineProps<{
           <img
             class="w-[250px] max-w-[250px] sm:w-full rounded-md shadow-md shadow-gray-500"
             :src="tvshow.image?.original"
-            :alt="tvshow.name"
+            :alt="`${tvshow.name} poster`"
           />
         </div>
         <div
@@ -40,10 +42,10 @@ const { tvshow } = defineProps<{
 
         <p
           class="mt-2 mb-3 text-sm text-gray-500"
-          aria-label="Tv show genres"
+          :aria-label="`Tv show genres: ${tvShowGenres}`"
           data-test="tv-show-genres"
         >
-          {{ tvshow.genres.join(', ') }}
+          {{ tvShowGenres }}
         </p>
         <ul aria-label="Tv show additional information">
           <li data-test="tv-show-language">

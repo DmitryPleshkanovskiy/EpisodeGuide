@@ -14,6 +14,8 @@ const route = useRoute()
       class="absolute text-white left-5"
       to="/"
       data-test="back-to-main-link"
+      aria-label="Back to main page"
+      title="Back to main page"
     >
       <IconAngleLeft />
     </RouterLink>
