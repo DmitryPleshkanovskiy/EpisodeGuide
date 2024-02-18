@@ -23,6 +23,7 @@ const handleClearInput = () => {
       <input
         class="w-80 p-1 rounded-md border-2 border-black"
         type="text"
+        name="search"
         placeholder="Search for tv show..."
         v-model="searchTerm"
         aria-label="Search input"
@@ -32,6 +33,7 @@ const handleClearInput = () => {
         class="w-9 h-9 color-black absolute right-0"
         @click="handleClearInput"
         aria-label="Clear search input"
+        data-testid="clear-search-input"
       >
         <IconClose />
       </button>
