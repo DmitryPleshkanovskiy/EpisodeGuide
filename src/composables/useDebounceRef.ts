@@ -13,5 +13,5 @@ export const useDebouncedRef = (initialValue: string, delay: number) => {
       trigger()
     }, delay)
   }))
-  return debouncedRef
+  return [debouncedRef, state] as const
 }

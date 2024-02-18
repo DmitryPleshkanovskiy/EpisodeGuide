@@ -9,34 +9,31 @@ const { show } = defineProps<{
 </script>
 
 <template>
-  <article>
-    <RouterLink :to="`/show/${show.id}`">
-      <figure>
-        <img class="w-full cover" v-if="show.image" :src="show.image.medium" alt="show.name" />
-      </figure>
+  <article class="flex flex-col align-center">
+    <RouterLink class="hover:shadow-md hover:shadow-gray-500" :to="`/show/${show.id}`">
       <div class="title">
-        <h4>{{ show.name }}</h4>
+        <h4 :aria-label="`${show.name}`">{{ show.name }}</h4>
+      </div>
+      <div class="w-[150px] h-[200px] bg-gray-300 m-0 p-0 flex">
+        <img
+          class="w-full cover"
+          v-if="show.image"
+          :src="show.image.medium"
+          :alt="`Tv show poster`"
+        />
+        <div
+          v-else
+          class="flex items-center justify-center w-full h-full text-gray-500"
+          aria-label="No tv show poster available"
+        >
+          No image
+        </div>
       </div>
     </RouterLink>
   </article>
 </template>
 
 <style scoped>
-article {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-figure {
-  width: 150px;
-  height: 200px;
-  background: #0000003a;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
 a {
   display: block;
   position: relative;
@@ -47,11 +44,10 @@ a {
   margin: 1rem 0;
 }
 
-a:hover {
-  text-decoration: underline;
+/* a:hover {
   box-shadow: 0 0 1em #00000073;
   color: #000;
-}
+} */
 
 .title {
   padding: 0;

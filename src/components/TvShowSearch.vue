@@ -5,14 +5,14 @@ import { useDebouncedRef } from '@/composables/useDebounceRef'
 import IconClose from './icons/IconClose.vue'
 
 const emit = defineEmits(['onSearch', 'onClear'])
-const searchTerm = useDebouncedRef('', 500)
+const [searchTerm, searchDirectState] = useDebouncedRef('', 500)
 
 watch(searchTerm, (newSearchTerm) => {
   emit('onSearch', newSearchTerm)
 })
 
 const handleClearInput = () => {
-  searchTerm.value = ''
+  searchDirectState.value = ''
   emit('onClear')
 }
 </script>
@@ -25,11 +25,13 @@ const handleClearInput = () => {
         type="text"
         placeholder="Search for tv show..."
         v-model="searchTerm"
+        aria-label="Search input"
       />
       <button
         v-show="searchTerm.length"
         class="w-9 h-9 color-black absolute right-0"
         @click="handleClearInput"
+        aria-label="Clear search input"
       >
         <IconClose />
       </button>

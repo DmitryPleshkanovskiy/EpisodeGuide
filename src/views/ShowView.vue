@@ -5,20 +5,16 @@ import TvShowDetails from '@/components/TvShowDetails.vue'
 
 import type { Show } from '../types/show'
 import { useFetch } from '@/composables/useFetch'
+import ErrorMessage from '@/components/ErrorMessage.vue'
 
 const route = useRoute()
 const { data: tvshow, isLoading, error } = useFetch<Show>(`/shows/${route.params.id}`)
 </script>
 
 <template>
-  <!-- TODO: Replace with loader -->
-  <div v-if="isLoading">
-    <p>Loading...</p>
+  <ErrorMessage class="m-5" :errors="[error]" />
+  <TvShowDetails v-if="tvshow && !isLoading" :tvshow="tvshow" />
+  <div v-else-if="isLoading">
+    <p>TV show is loading...</p>
   </div>
-  <!-- TODO: Replace with alert component -->
-  <div v-if="error">
-    <p>There was an error:</p>
-    <pre>{{ error }}</pre>
-  </div>
-  <TvShowDetails v-if="tvshow" :tvshow="tvshow" />
 </template>

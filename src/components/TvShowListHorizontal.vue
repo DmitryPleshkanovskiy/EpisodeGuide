@@ -18,7 +18,8 @@ const {
   <section class="w-full mt-5 flex flex-col" :aria-label="title">
     <div v-show="isLoading" class="skeleton-title skeleton"></div>
     <h2 class="px-5 text-xl font-bold uppercase" v-show="!isLoading">{{ title }}</h2>
-    <ul class="h-[200px] flex-1 flex gap-4 px-5 overflow-x-auto">
+    <div class="mx-5 text-gray-400" v-if="!shows.length">No shows available</div>
+    <ul class="h-[200px] flex-1 flex gap-4 px-5 overflow-x-auto" v-if="shows.length">
       <li v-for="show in sortShowsByRating(shows)" :key="show.id">
         <TvShowPreview :show="show" />
       </li>

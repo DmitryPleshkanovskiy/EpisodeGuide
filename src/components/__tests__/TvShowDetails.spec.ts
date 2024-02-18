@@ -28,7 +28,7 @@ describe('TvShowDetails', () => {
       }
     })
 
-    const tvshowName = wrapper.find('h3')
+    const tvshowName = wrapper.find('h2')
     const tvshowRating = wrapper.find('[data-test="tv-show-rating"]')
     const tvshowImage = wrapper.find('img')
     const tvshowGenres = wrapper.find('[data-test="tv-show-genres"]')
@@ -39,7 +39,7 @@ describe('TvShowDetails', () => {
 
     expect(tvshowName.text()).toEqual(mockShow.name)
     expect(tvshowRating.text()).toContain(mockShow.rating?.average)
-    expect(tvshowImage.attributes('src')).toEqual(mockShow.image?.medium)
+    expect(tvshowImage.attributes('src')).toEqual(mockShow.image?.original)
     expect(tvshowGenres.text()).toEqual(mockShow.genres.join(', '))
     expect(tvshowLanguage.text()).toContain(mockShow.language)
     expect(tvshowPremiered.text()).toContain(mockShow.premiered)
