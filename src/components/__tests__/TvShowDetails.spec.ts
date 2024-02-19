@@ -29,13 +29,13 @@ describe('TvShowDetails', () => {
     })
 
     const tvshowName = wrapper.find('h2')
-    const tvshowRating = wrapper.find('[data-test="tv-show-rating"]')
+    const tvshowRating = wrapper.find('[data-testid="tv-show-rating"]')
     const tvshowImage = wrapper.find('img')
-    const tvshowGenres = wrapper.find('[data-test="tv-show-genres"]')
-    const tvshowLanguage = wrapper.find('[data-test="tv-show-language"]')
-    const tvshowPremiered = wrapper.find('[data-test="tv-show-premiered"]')
-    const tvshowStatus = wrapper.find('[data-test="tv-show-status"]')
-    const tvshowSummary = wrapper.find('[data-test="tv-show-summary"]')
+    const tvshowGenres = wrapper.find('[data-testid="tv-show-genres"]')
+    const tvshowLanguage = wrapper.find('[data-testid="tv-show-language"]')
+    const tvshowPremiered = wrapper.find('[data-testid="tv-show-premiered"]')
+    const tvshowStatus = wrapper.find('[data-testid="tv-show-status"]')
+    const tvshowSummary = wrapper.find('[data-testid="tv-show-summary"]')
 
     expect(tvshowName.text()).toEqual(mockShow.name)
     expect(tvshowRating.text()).toContain(mockShow.rating?.average)
@@ -58,7 +58,7 @@ describe('TvShowDetails', () => {
     })
 
     const tvshowImage = wrapper.find('img')
-    const noImageText = wrapper.find('[data-test="no-image-text"]')
+    const noImageText = wrapper.find('[data-testid="no-image-text"]')
     expect(tvshowImage.exists()).toBe(false)
     expect(noImageText.text()).toEqual('No image')
   })
@@ -73,7 +73,7 @@ describe('TvShowDetails', () => {
       }
     })
 
-    const tvshowRating = wrapper.find('[data-test="tv-show-rating"]')
+    const tvshowRating = wrapper.find('[data-testid="tv-show-rating"]')
     expect(tvshowRating.exists()).toBe(false)
   })
 })
