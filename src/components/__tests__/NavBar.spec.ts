@@ -45,7 +45,7 @@ describe('NavBar', () => {
       }
     })
     await router.isReady()
-    const backToMainLink = wrapper.find('[data-test="back-to-main-link"]')
+    const backToMainLink = wrapper.find('[data-testid="back-to-main-link"]')
     expect(backToMainLink.exists()).toBe(false)
   })
 
@@ -59,7 +59,7 @@ describe('NavBar', () => {
 
     await router.push('/show/1')
 
-    const backToMainLink = wrapper.find('[data-test="back-to-main-link"]')
+    const backToMainLink = wrapper.find('[data-testid="back-to-main-link"]')
     expect(backToMainLink.exists()).toBe(true)
   })
 })

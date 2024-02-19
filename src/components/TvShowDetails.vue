@@ -22,7 +22,7 @@ const tvShowGenres = tvshow.genres.join(', ')
         <div
           v-else
           class="w-[250px] min-h-[350px] text-gray-500 flex items-center justify-center bg-gray-300 rounded-md shadow-md shadow-gray-500"
-          data-test="no-image-text"
+          data-testid="no-image-text"
         >
           No image
         </div>
@@ -33,7 +33,7 @@ const tvShowGenres = tvshow.genres.join(', ')
           <span
             v-if="tvshow.rating?.average"
             class="w-10 h-10 min-w-10 flex items-center justify-center mt-3 bg-black rounded-[50%] text-xl text-white"
-            data-test="tv-show-rating"
+            data-testid="tv-show-rating"
             aria-label="Tv show rating"
           >
             {{ tvshow.rating?.average }}
@@ -43,23 +43,23 @@ const tvShowGenres = tvshow.genres.join(', ')
         <p
           class="mt-2 mb-3 text-sm text-gray-500"
           :aria-label="`Tv show genres: ${tvShowGenres}`"
-          data-test="tv-show-genres"
+          data-testid="tv-show-genres"
         >
           {{ tvShowGenres }}
         </p>
         <ul aria-label="Tv show additional information">
-          <li data-test="tv-show-language">
+          <li data-testid="tv-show-language">
             <span class="font-bold">Language:</span>
             {{ tvshow.language }}
           </li>
-          <li data-test="tv-show-premiered">
+          <li data-testid="tv-show-premiered">
             <span class="font-bold">Premiered:</span>
             {{ tvshow.premiered }}
           </li>
-          <li data-test="tv-show-status">
+          <li data-testid="tv-show-status">
             <span class="font-bold">Status:</span> {{ tvshow.status }}
           </li>
-          <li class="mt-3 text-justify" data-test="tv-show-summary">
+          <li class="mt-3 text-justify" data-testid="tv-show-summary">
             <!-- TODO: Sanitize: tvshow.summary -->
             <p v-html="tvshow.summary" />
           </li>

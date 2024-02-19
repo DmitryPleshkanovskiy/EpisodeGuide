@@ -15,7 +15,7 @@ const { searchResults } = defineProps<{
     data-testid="search-results"
   >
     <div v-for="result in searchResults" :key="result.show.id">
-      <TvShowPreview :show="result.show" />
+      <TvShowPreview :tvshow="result.show" />
     </div>
   </section>
   <section v-else class="p-5 flex items-center justify-center" aria-label="No tv shows found">
