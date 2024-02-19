@@ -2,29 +2,30 @@
 import { RouterLink } from 'vue-router'
 import type { Show } from '../types/show'
 
-const { show } = defineProps<{
-  show: Show
+const { tvshow } = defineProps<{
+  tvshow: Show
   isLoading?: boolean
 }>()
 </script>
 
 <template>
   <article class="flex flex-col align-center">
-    <RouterLink class="hover:shadow-md hover:shadow-gray-500" :to="`/show/${show.id}`">
+    <RouterLink class="hover:shadow-md hover:shadow-gray-500" :to="`/show/${tvshow.id}`">
       <div class="title">
-        <h4 :aria-label="`${show.name}`">{{ show.name }}</h4>
+        <h3 :aria-label="`${tvshow.name}`">{{ tvshow.name }}</h3>
       </div>
       <div class="w-[150px] h-[200px] bg-gray-300 m-0 p-0 flex">
         <img
           class="w-full cover"
-          v-if="show.image"
-          :src="show.image.medium"
+          v-if="tvshow.image"
+          :src="tvshow.image.medium"
           :alt="`Tv show poster`"
         />
         <div
           v-else
           class="flex items-center justify-center w-full h-full text-gray-500"
           aria-label="No tv show poster available"
+          data-testid="no-image-text"
         >
           No image
         </div>
@@ -43,11 +44,6 @@ a {
   overflow: hidden;
   margin: 1rem 0;
 }
-
-/* a:hover {
-  box-shadow: 0 0 1em #00000073;
-  color: #000;
-} */
 
 .title {
   padding: 0;

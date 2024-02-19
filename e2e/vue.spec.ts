@@ -35,7 +35,7 @@ test('search for a tv show', async ({ page }) => {
   await page.fill('input[name="search"]', 'Breaking Bad')
   await page.waitForSelector('section[data-testid="search-results"]')
   await expect(page.locator('section[data-testid="search-results"]')).toBeTruthy()
-  await expect(page.locator('h4').first()).toHaveText('Breaking Bad')
+  await expect(page.locator('h3').first()).toHaveText('Breaking Bad')
 })
 
 test('search for a tv show and clear results', async ({ page }) => {
@@ -43,7 +43,7 @@ test('search for a tv show and clear results', async ({ page }) => {
   await page.waitForSelector('input[name="search"]')
   await page.fill('input[name="search"]', 'Breaking Bad')
   await page.waitForSelector('section[data-testid="search-results"]')
-  await expect(page.locator('h4').first()).toHaveText('Breaking Bad')
+  await expect(page.locator('h3').first()).toHaveText('Breaking Bad')
   await page.click('button[data-testid="clear-search-input"]')
   await expect(page.locator('input[name="search"]')).toHaveText('')
   await expect(page.locator('button[data-testid="clear-search-input"]')).toBeHidden()
