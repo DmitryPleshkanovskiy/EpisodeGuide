@@ -17,6 +17,7 @@ const tvShowGenres = tvshow.genres.join(', ')
             class="w-[250px] max-w-[250px] sm:w-full rounded-md shadow-md shadow-gray-500"
             :src="tvshow.image?.original"
             :alt="`${tvshow.name} poster`"
+            loading="lazy"
           />
         </div>
         <div
