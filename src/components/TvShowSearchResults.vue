@@ -10,7 +10,7 @@ const { searchResults } = defineProps<{
 <template>
   <section
     v-if="searchResults.length"
-    class="flex flex-wrap gap-3 p-5 justify-center"
+    class="flex flex-wrap justify-center gap-3 p-5"
     aria-label="Search results"
     data-testid="search-results"
   >
@@ -18,7 +18,7 @@ const { searchResults } = defineProps<{
       <TvShowPreview :tvshow="result.show" />
     </div>
   </section>
-  <section v-else class="p-5 flex items-center justify-center" aria-label="No tv shows found">
+  <section v-else class="flex items-center justify-center p-5" aria-label="No tv shows found">
     No tv shows found
   </section>
 </template>

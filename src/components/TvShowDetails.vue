@@ -10,11 +10,11 @@ const tvShowGenres = tvshow.genres.join(', ')
 
 <template>
   <article class="p-5" data-testid="show-details">
-    <div class="flex gap-5 flex-col sm:flex-row">
-      <div class="w-full sm:w-[250px] object-contain">
+    <div class="flex flex-col gap-5 sm:flex-row">
+      <div class="w-full object-contain sm:w-[250px]">
         <div v-if="tvshow.image" class="flex justify-center">
           <img
-            class="w-[250px] max-w-[250px] sm:w-full rounded-md shadow-md shadow-gray-500"
+            class="w-[250px] max-w-[250px] rounded-md shadow-md shadow-gray-500 sm:w-full"
             :src="tvshow.image?.original"
             :alt="`${tvshow.name} poster`"
             loading="lazy"
@@ -22,18 +22,18 @@ const tvShowGenres = tvshow.genres.join(', ')
         </div>
         <div
           v-else
-          class="w-[250px] min-h-[350px] text-gray-500 flex items-center justify-center bg-gray-300 rounded-md shadow-md shadow-gray-500"
+          class="flex min-h-[350px] w-[250px] items-center justify-center rounded-md bg-gray-300 text-gray-500 shadow-md shadow-gray-500"
           data-testid="no-image-text"
         >
           No image
         </div>
       </div>
       <section class="flex-1">
-        <div class="flex justify-between items-center">
+        <div class="flex items-center justify-between">
           <h2 class="text-3xl">{{ tvshow.name }}</h2>
           <span
             v-if="tvshow.rating?.average"
-            class="w-10 h-10 min-w-10 flex items-center justify-center mt-3 bg-black rounded-[50%] text-xl text-white"
+            class="mt-3 flex h-10 w-10 min-w-10 items-center justify-center rounded-[50%] bg-black text-xl text-white"
             data-testid="tv-show-rating"
             aria-label="Tv show rating"
           >
@@ -42,7 +42,7 @@ const tvShowGenres = tvshow.genres.join(', ')
         </div>
 
         <p
-          class="mt-2 mb-3 text-sm text-gray-500"
+          class="mb-3 mt-2 text-sm text-gray-500"
           :aria-label="`Tv show genres: ${tvShowGenres}`"
           data-testid="tv-show-genres"
         >
