@@ -4,7 +4,11 @@ import { useDebouncedRef } from '@/composables/useDebounceRef'
 
 import IconClose from './icons/IconClose.vue'
 
-const emit = defineEmits(['onSearch', 'onClear'])
+const emit = defineEmits<{
+  (e: 'onSearch', newSearchTerm: string): void
+  (e: 'onClear'): void
+}>()
+
 const [searchTerm, searchDirectState] = useDebouncedRef('', 500)
 
 watch(searchTerm, (newSearchTerm) => {
@@ -18,10 +22,10 @@ const handleClearInput = () => {
 </script>
 
 <template>
-  <form class="px-5 flex w-full justify-center" @submit.prevent>
-    <div class="flex relative">
+  <form class="flex w-full justify-center px-5" @submit.prevent>
+    <div class="relative flex">
       <input
-        class="w-80 p-1 rounded-md border-2 border-black"
+        class="w-80 rounded-md border-2 border-black p-1"
         type="text"
         name="search"
         placeholder="Search for tv show..."
@@ -30,7 +34,7 @@ const handleClearInput = () => {
       />
       <button
         v-show="searchTerm.length"
-        class="w-9 h-9 color-black absolute right-0"
+        class="color-black absolute right-0 h-9 w-9"
         @click="handleClearInput"
         aria-label="Clear search input"
         data-testid="clear-search-input"

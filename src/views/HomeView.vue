@@ -12,6 +12,8 @@ import type { Show } from '../types/show'
 import type { SearchResult } from '@/types/searchResult'
 import ErrorMessage from '@/components/ErrorMessage.vue'
 
+import { genresFromTvShows } from '../utils/genresFromTvShows'
+
 const query = ref('')
 const searchUrl = computed(() => `/search/shows?q=${query.value}`)
 
@@ -23,9 +25,10 @@ const {
 } = useFetch<SearchResult[]>(searchUrl, { skip: computed(() => query.value == '') })
 
 // Genres to show on the home page
-const genres = ['Drama', 'Comedy', 'Mystery', 'Action', 'Sports']
+// const genres = ['Drama', 'Comedy', 'Mystery', 'Action', 'Sports']
+const genres = computed(() => genresFromTvShows(showsList.value))
 
-const showsGroupedByGenre = computed(() => groupShowsByGenre(showsList.value, genres))
+const showsGroupedByGenre = computed(() => groupShowsByGenre(showsList.value, genres.value))
 
 const showSearchResults = computed<boolean>(
   () => query.value !== '' && !isSearchResultsLoading.value

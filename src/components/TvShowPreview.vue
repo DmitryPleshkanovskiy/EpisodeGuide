@@ -9,21 +9,21 @@ const { tvshow } = defineProps<{
 </script>
 
 <template>
-  <article class="flex flex-col align-center">
+  <article class="align-center flex flex-col">
     <RouterLink class="hover:shadow-md hover:shadow-gray-500" :to="`/show/${tvshow.id}`">
       <div class="title">
         <h3 :aria-label="`${tvshow.name}`">{{ tvshow.name }}</h3>
       </div>
-      <div class="w-[150px] h-[200px] bg-gray-300 m-0 p-0 flex">
+      <div class="m-0 flex h-[200px] w-[150px] bg-gray-300 p-0">
         <img
-          class="w-full cover"
+          class="cover w-full"
           v-if="tvshow.image"
           :src="tvshow.image.medium"
           :alt="`Tv show poster`"
         />
         <div
           v-else
-          class="flex items-center justify-center w-full h-full text-gray-500"
+          class="flex h-full w-full items-center justify-center text-gray-500"
           aria-label="No tv show poster available"
           data-testid="no-image-text"
         >
