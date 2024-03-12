@@ -1,6 +1,12 @@
 # Episode Guide
 
-Vue 3 was used to implement the assignment, as stated in the task description regarding the preferred framework.
+Simple app to discover popular TV shows. The app is consuming [tvmaze.com](https://www.tvmaze.com) API to get a list of TV shows. 
+
+Demo app is available at: [episode-guide.dpserver.org](https://episode-guide.dpserver.org)
+
+![Episode Guide](./episode-guide-screen.png)
+
+Vue 3 was used to implement the app.
 
 It has many key qualities:
 
@@ -21,7 +27,7 @@ Additionally, the project setup includes:
   - prepare-commit-msg - to force consistent commit messages format
 - github actions - to run deployment pipeline on every main branch update
 
-Demo app available at [episode-guide.dpserver.org](https://episode-guide.dpserver.org)
+
 
 The application is hosted in an AWS S3 bucket and distributed via CloudFront CDN.
 
